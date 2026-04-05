@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I LOVE YOU 💖</title>
+    <style>
+        body {
+            background-color: #fff0f5; /* soft pink */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        h1 {
+            color: #ff1a75;
+            margin-top: 100px;
+            font-size: 40px;
+        }
+
+        /* Floating hearts */
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: red;
+            animation: float 3s ease-in infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-600px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>I LOVE YOU Zabi💖</h1>
+    <div class="hearts" id="heartsContainer"></div>
+
+    <script>
+        // Add floating hearts
+        for (let i = 0; i < 30; i++) {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "🌹"; // rose emoji
+
+    // Random start position (x and y)
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = Math.random() * window.innerHeight + "px";
+
+    // Random animation duration
+    heart.style.animationDuration = 3 + Math.random() * 3 + "s";
+
+    document.getElementById("heartsContainer").appendChild(heart);
+
+    // Remove rose after animation
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+    </script>
+</body>
+</html>
